@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Public Height Collector App</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Collecting your heights</h1>
+      <h3>Please fill in the forms below to have the average user height e-mailed to you.</h3>
+      <div class="error_message">
+        {{text | safe}}
+      </div>
+      <form class="infoform" action="{{url_for('success')}}" method="POST">
+        <input type="number" title="Your info will not be sold or distributed." name="height_value" placeholder="Enter your height in cm" required min='50' max='300'>
+        <br>
+        <input type="email" title="Your info will not be sold or distributed." name="email_name" placeholder="Enter your e-mail" required>
+        <br>
+        <button type="submit" name="submit">Submit!</button>
+      </form>
+    </div>
+  </body>
+</html>
